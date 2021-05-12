@@ -2,11 +2,10 @@ import React from "react";
 import { Card } from "primereact/card";
 import { Button } from "primereact/button";
 import {useSelector} from 'react-redux';
-import './Book.scss'
+import '../../components/Book/Book.scss'
 const Book = () => {
   const state = useSelector(({ books, authors }) => {
     return {
-      books: books.items,
       authors: authors.items,
      
     };
@@ -18,7 +17,7 @@ const Book = () => {
   );
   const footer = (
     <span>
-      <Button label="Mark" icon="pi pi-check" />
+      <Button label="Find Books" icon="pi pi-check" style={{margin: "8px"}} />
       <Button
         label="Delete"
         icon="pi pi-times"
@@ -29,11 +28,11 @@ const Book = () => {
     //создать экшон Условие если authorId === book.author.id то setAuthorId = author
   return (
     <div className="container">
-      {state.books.map((items) =>(
+      {state.authors.map((items) =>(
       <Card
-        title={items.name}
+        title={`${items.first_name}  ${items.patronymic}  ${items.last_name}`}
         key={items.id}
-        subTitle='123'
+        subTitle={null}
         style={{ width: "15em" }}
         footer={footer}
         header={header}
