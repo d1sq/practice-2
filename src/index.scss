@@ -6,9 +6,10 @@ body {
     font-size: 23px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+   
     background: url("https://i.imgur.com/BGssb4x.jpg");
     background-repeat: repeat;
     background-size: cover;
-    backdrop-filter: blur(5px); // blur the bgs
+    backdrop-filter: blur(5px);
     height: 100vh;
 }

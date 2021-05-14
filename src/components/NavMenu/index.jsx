@@ -1,6 +1,6 @@
 import React from "react";
 import { TabMenu } from "primereact/tabmenu";
-import { Link } from "react-router-dom";
+
 import "./NavMenu.scss";
 const NavMenu = () => {
   const items = [

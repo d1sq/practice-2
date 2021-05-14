@@ -12,7 +12,7 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import "primeflex/primeflex.css";
 
-import { NavMenu, Book, Authors, Genres, AddNew, Header } from "./components";
+import { Book, Authors, Genres, AddNew, Header, TestCard } from "./components";
 
 function App() {
   const dispatch = useDispatch();
@@ -30,9 +30,9 @@ function App() {
   }, []);
   return (
     <div>
-      <Route path="/">
-        <Header/>
-      </Route>
+      {/* <Route path="/">
+        <Header />
+      </Route> */}
       <Route exact path="/books">
         <Book />
       </Route>
@@ -43,7 +43,10 @@ function App() {
         <Genres />
       </Route>
       <Route exact path="/new">
-        <AddNew/>
+        <AddNew />
+      </Route>
+      <Route exact path="/test">
+        <TestCard />
       </Route>
     </div>
   );
