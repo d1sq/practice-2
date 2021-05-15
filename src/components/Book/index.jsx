@@ -32,6 +32,7 @@ const Book = () => {
           key={items.id}
           subTitle="123"
           style={{ width: "15em" }}
+          
           footer={
             <span>
               <Button label="Mark" icon="pi pi-check" />
@@ -39,7 +40,7 @@ const Book = () => {
                 label="Delete"
                 icon="pi pi-times"
                 className="p-button-secondary p-ml-2"
-                onClick={console.log(items.id)}
+                // onClick={console.log()}
               />
             </span>
           }
@@ -48,6 +49,7 @@ const Book = () => {
           <p className="p-m-0" style={{ lineHeight: "1.5" }}>
             {items.year}
           </p>
+          
         </Card>
       ))}
     </div>

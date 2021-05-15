@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { MultiSelect } from "primereact/multiselect";
-import { InputText } from 'primereact/inputtext';
-import "./AddNew.scss";
 import { useSelector } from "react-redux";
+import { InputText } from 'primereact/inputtext';
+import { Dropdown } from 'primereact/dropdown';
+import { Button } from 'primereact/button';
+import "./AddNew.scss";
 
 const AddNew = () => {
-  const [value1, setValue1] = useState('');
-  const [value2, setValue2] = useState('');
-  const [authorsState, setAuthorsState] = useState(null);
-  const [genresState, setGenresState] = useState(null);
+  const [SelectedAuthors, setSelectedAuthors] = React.useState(null);
+  const [SelectedGenres, setSelectedGenres] = React.useState(null);
+  const [BookName, setBookName] = React.useState(null);
+  const [BookYear, setBookYear] = React.useState(null);
   const authors = useSelector((state) => state.authors.items);
   const genres = useSelector((state) => state.genres.items);
-
   const authorsArray = authors.map((items) => {
     return {
       name: ` ${items.first_name} ${items.patronymic} ${items.last_name} `,
@@ -20,37 +21,30 @@ const AddNew = () => {
   });
   const genresArray = genres.map((items) => {
     return {
-      genre: items.name,
-      // genreValue: items.id,
+      name: items.name,
+      genresValue: items.id,
     };
   });
-  // genresArray.map((item) => console.log(item.genre))
+// genresArray.map(item => console.log(item.name))
 
   return (
     <div className="container_add-book">
       <div className="add-book">
         <div className="multiselect-demo">
           <div className="card">
-          <InputText placeholder="Название книги" value={value1} onChange={(e) => setValue1(e.target.value)} /><br></br>
+          <InputText placeholder="Название книги" value={BookName} onChange={(e) => setBookName(e.target.value)} />
+          <InputText placeholder="Год" value={BookYear} onChange={(e) => setBookYear(e.target.value)} /><br></br>
             <MultiSelect
-              value={authorsState}
+              value={SelectedAuthors}
               options={authorsArray}
-              optionValue={authorsArray}
-              onChange={(e) => setAuthorsState(e.value)}
+              onChange={(e) => setSelectedAuthors(e.value)}
               optionLabel="name"
-              placeholder="Выбрать автора"
+              placeholder="Select an author"
               display="chip"
             /><br></br>
-            <MultiSelect
-              value={genresState}
-              options={genresArray}
-              optionValue={genresArray}
-              onChange={(e) => setGenresState(e.value)}
-              optionLabel="name"
-              placeholder="Выбрать жанр"
-              display="chip"
-            /><br></br>
-            <InputText placeholder="Год" value={value2} onChange={(e) => setValue2(e.target.value)} />
+            <Dropdown value={SelectedGenres} options={genresArray} onChange={(e) => setSelectedGenres(e.value)} optionLabel="name" placeholder="Select a genre " />
+            <br></br>
+            <Button label="Success" className="p-button-success" />
           </div>
         </div>
       </div>
@@ -60,6 +54,5 @@ const AddNew = () => {
 
 export default AddNew;
 //А нужно ли хранить в redux Данные для отправки на сервер?
-//Почему жанры не отображаются?
 //Как в отображение книг достать автора
 //как сделать удаление книг
