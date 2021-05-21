@@ -1,16 +1,26 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Card } from "primereact/card";
 import { Button } from "primereact/button";
-import {useSelector} from 'react-redux';
-import '../../components/Book/Book.scss'
-const Book = () => {
-  const state = useSelector(({ books, authors }) => {
-    return {
-      authors: authors.items,
-     
-    };
-  });
+import { ProgressSpinner } from 'primereact/progressspinner';
+import 'components/Book/Book.scss'
 
+import useFetch from "hooks/useFetch";
+
+import { AUTHORS } from "modules/api/endpoints";
+
+
+const Book = (authors = [], loading) => {
+  const {response, performFetch} = useFetch(AUTHORS);
+ useEffect(() => {
+    performFetch();
+ }, [performFetch])
+ console.log(response);
+ if (loading || !authors){
+   return (
+    <ProgressSpinner/>
+
+   )
+ }
 
   const header = (
     null
@@ -25,10 +35,10 @@ const Book = () => {
       />
     </span>
   );
-    //создать экшон Условие если authorId === book.author.id то setAuthorId = author
+  
   return (
     <div className="container">
-      {state.authors.map((items) =>(
+      {response.authors.map((items) =>(
       <Card
         title={`${items.first_name}  ${items.patronymic}  ${items.last_name}`}
         key={items.id}

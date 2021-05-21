@@ -12,18 +12,7 @@ const Book = () => {
   });
 
   const header = null;
-  // const footer = (
-  //   <span>
-  //     <Button label="Mark" icon="pi pi-check" />
-  //     <Button
-  //       label="Delete"
-  //       icon="pi pi-times"
-  //       className="p-button-secondary p-ml-2"
-  //       onClick={console.log("123")}
-  //     />
-  //   </span>
-  // );
-  //создать экшон Условие если authorId === book.author.id то setAuthorId = author
+
   return (
     <div className="container">
       {state.books.map((items) => (
