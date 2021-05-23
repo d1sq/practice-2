@@ -1,44 +1,20 @@
-import React from "react";
-import { Card } from "primereact/card";
-import { Button } from "primereact/button";
-import { useSelector } from "react-redux";
+import React, {useEffect} from "react";
+import useFetch from "hooks/useFetch";
+import BooksGrid from "components/common/BooksGrid";
+import { BOOKS } from "modules/api/endpoints";
 import "./Book.scss";
+
 const Book = () => {
-  const state = useSelector(({ books, authors }) => {
-    return {
-      books: books.items,
-      authors: authors.items,
-    };
-  });
-
-  const header = null;
-
+  const {response, performFetch} = useFetch(BOOKS);
+  const {loading, data} = response;
+console.log(data)
+ useEffect(() => {
+    performFetch();
+ }, [performFetch])
+console.log(response)
   return (
     <div className="container">
-      {state.books.map((items) => (
-        <Card
-          title={items.name}
-          key={items.id}
-          subTitle="123"
-          style={{ width: "15em" }}
-          footer={
-            <span>
-              <Button label="Mark" icon="pi pi-check" />
-              <Button
-                label="Delete"
-                icon="pi pi-times"
-                className="p-button-secondary p-ml-2"
-                onClick={console.log(items.id)}
-              />
-            </span>
-          }
-          header={header}
-        >
-          <p className="p-m-0" style={{ lineHeight: "1.5" }}>
-            {items.year}
-          </p>
-        </Card>
-      ))}
+      <BooksGrid books={data} loading={loading}/>
     </div>
   );
 };

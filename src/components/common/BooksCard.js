@@ -2,7 +2,7 @@ import React from "react";
 import { Card } from "primereact/card";
 import { Button } from "primereact/button";
 
-const AuthorCard = ({name, last_name, patronymic}) => {
+const BookCard = ({name, genre, year}) => {
   const header = null;
   const footer = (
     <span>
@@ -18,13 +18,14 @@ const AuthorCard = ({name, last_name, patronymic}) => {
   return (
     <div>
       <Card
-        title={`${name} ${last_name} ${patronymic}`}
+        title={name}
+        subTitle={genre}
         style={{ width: "25em" }}
         footer={footer}
         header={header}
-      ></Card>
+      >{year}</Card>
     </div>
   );
 };
 
-export default AuthorCard;
+export default BookCard;

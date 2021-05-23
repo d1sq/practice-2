@@ -8,15 +8,15 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import "primeflex/primeflex.css";
 
-import {AuthorGrid } from "./components";
+import {Authors, Books, Genres } from "./components";
 
 function App() {
-  const dispatch = useDispatch();
-
   
   return (
     <div> 
-      <AuthorGrid/>
+      {/* <Authors/> */}
+      {/* <Books/> */}
+      <Genres/>
     </div>
   );
 }

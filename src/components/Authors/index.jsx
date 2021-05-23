@@ -1,26 +1,22 @@
-import React, {useEffect} from "react";
-import 'components/Book/Book.scss'
+import React, {useEffect, useMemo} from "react";
 
+import { useSelector } from 'react-redux';
 import useFetch from "hooks/useFetch";
-
 import { AUTHORS } from "modules/api/endpoints";
-import AuthorCard from "components/common/AuthorCard";
 import AuthorsGrid from "components/common/AuthorsGrid";
 
 
-const Authors = (authors = [], loading) => {
+const Authors = () => {
   const {response, performFetch} = useFetch(AUTHORS);
-  
+  const {loading, data} = response;
+console.log(data)
  useEffect(() => {
     performFetch();
  }, [performFetch])
 
-
-  
-  
   return (
     <div className="container">
-      <AuthorsGrid authors="123" />
+      <AuthorsGrid authors={data} loading={loading}/>
     </div>
   );
 };
