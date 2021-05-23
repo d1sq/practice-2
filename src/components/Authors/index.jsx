@@ -1,6 +1,5 @@
-import React, {useEffect, useMemo} from "react";
+import React, {useEffect} from "react";
 
-import { useSelector } from 'react-redux';
 import useFetch from "hooks/useFetch";
 import { AUTHORS } from "modules/api/endpoints";
 import AuthorsGrid from "components/common/AuthorsGrid";

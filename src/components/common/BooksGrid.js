@@ -11,7 +11,7 @@ const BooksGrid = ({ books = [], loading }) => {
       </div>
     );
   }
-  console.log(books)
+
   return <div>      
       {books.map(book =>(
           <div key={book.id}>
