@@ -22,7 +22,7 @@ const Genres = () => {
   }, [performFetch]);
 
   return (
-    <div>
+    <div className="container">
       {preparedData.map(item =>(
         <div key={item.id}>
           <Card title={item.name} style={{ width: '25rem', marginBottom: '2em' }}>

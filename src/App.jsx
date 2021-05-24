@@ -8,11 +8,12 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import "primeflex/primeflex.css";
 
-import { Authors, Books, Genres, MainPage } from "./components";
+import { Authors, Books, Genres, MainPage, NavMenu } from "./components";
 
 function App() {
   return (
     <div>
+      <Route path="/"><NavMenu/></Route>
       <Route exact path="/"><MainPage/></Route>
       
       <Route exact path="/authors">
