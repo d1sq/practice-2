@@ -4,6 +4,7 @@ import React from "react";
 import AuthorCard from 'components/common/AuthorCard';
 
 const AuthorsGrid = ({ authors = [], loading }) => {
+
   if (loading || !authors) {
     return (
       <div className="p-grid p-align-center p-justify-center">

@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
-import { useDispatch } from "react-redux";
 import { Route } from "react-router-dom";
 
 import "primereact/resources/themes/saga-blue/theme.css";

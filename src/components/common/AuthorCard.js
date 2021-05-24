@@ -2,9 +2,9 @@ import React from "react";
 import { Card } from "primereact/card";
 import { Button } from "primereact/button";
 import { DeleteItem, EditItem } from "services/ChangeItems";
+
 const AuthorCard = ({ name, last_name, patronymic, id }) => {
-
-
+ 
 
   const header = null;
   const footer = (
