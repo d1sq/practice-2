@@ -7,11 +7,11 @@ import "./Book.scss";
 const Book = () => {
   const {response, performFetch} = useFetch(BOOKS);
   const {loading, data} = response;
-console.log(data)
+
  useEffect(() => {
     performFetch();
  }, [performFetch])
-console.log(response)
+
   return (
     <div className="container">
       <BooksGrid books={data} loading={loading}/>

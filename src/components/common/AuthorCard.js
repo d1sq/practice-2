@@ -1,20 +1,28 @@
 import React from "react";
 import { Card } from "primereact/card";
 import { Button } from "primereact/button";
+import { DeleteItem, EditItem } from "services/ChangeItems";
+const AuthorCard = ({ name, last_name, patronymic, id }) => {
 
-const AuthorCard = ({name, last_name, patronymic}) => {
+
+
   const header = null;
   const footer = (
     <span>
-      <Button label="Save" icon="pi pi-check" />
       <Button
-        label="Cancel"
+        onClick={() => EditItem("authors", id)}
+        label="Edit"
+        icon="pi pi-check"
+      />
+      <Button
+        onClick={() => DeleteItem("authors", id)}
+        label="Delete"
         icon="pi pi-times"
         className="p-button-secondary p-ml-2"
       />
     </span>
   );
-   
+
   return (
     <div>
       <Card
