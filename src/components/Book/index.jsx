@@ -8,6 +8,14 @@ import { useSelector } from "react-redux";
 const Book = () => {
   const { response, performFetch } = useFetch(BOOKS);
   const { loading, data } = response;
+
+  const state = useSelector((state) => {
+    return {
+      state
+     
+    };
+  });
+  console.log(state)
                 
   useEffect(() => {
     performFetch();
