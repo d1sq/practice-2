@@ -11,7 +11,9 @@ import { Authors, Books, Genres, MainPage, NavMenu } from "./components";
 
 function App() {
   return (
-    <div>
+    
+     <>
+     <div className="background"></div>
       <Route path="/"><NavMenu/></Route>
       <Route exact path="/"><MainPage/></Route>
       
@@ -24,7 +26,7 @@ function App() {
       <Route exact path="/genres">
         <Genres />
       </Route>
-    </div>
+    </>
   );
 }
 export default App;
