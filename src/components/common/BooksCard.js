@@ -2,7 +2,7 @@ import React from "react";
 import { Card } from "primereact/card";
 import { Button } from "primereact/button";
 import { DeleteItem, EditItem } from "services/ChangeItems";
-
+import "../../components/Book/Book.scss";
 
 const BookCard = ({ name, genre_id, year, id }) => {
   

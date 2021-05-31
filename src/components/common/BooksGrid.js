@@ -12,7 +12,7 @@ const BooksGrid = ({ books = [], loading }) => {
     );
   }
 
-  return <div>      
+  return <div  className="container">      
       {books.map(book =>(
           <div key={book.id}>
               <BooksCard id={book.id} name={book.name} genre={book.genre} genre_id={book.genre_id} year={book.year}/>

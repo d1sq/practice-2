@@ -13,7 +13,7 @@ const AuthorsGrid = ({ authors = [], loading }) => {
     );
   }
 
-  return <div>      
+  return <div  className="container">      
       {authors.map(author =>(
           <div key={author.id}>
               <AuthorCard id={author.id} name={author.first_name} last_name={author.last_name} patronymic={author.patronymic}/>
