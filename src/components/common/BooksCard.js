@@ -4,7 +4,7 @@ import { Button } from "primereact/button";
 import { DeleteItem, EditItem } from "services/ChangeItems";
 import "../../components/Book/Book.scss";
 
-const BookCard = ({ name, genre_id, year, id }) => {
+const BookCard = ({ name, genre_id, year, id, genre }) => {
   
  
   const header = null;

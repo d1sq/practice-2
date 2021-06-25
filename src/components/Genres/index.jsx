@@ -26,7 +26,7 @@ const Genres = () => {
       {preparedData.map(item =>(
         <div key={item.id}>
           <Card title={item.name} style={{ width: '25rem', marginBottom: '2em' }}>
-                <p className="p-m-0" style={{lineHeight: '1.5'}}>{item.id}</p>
+                
             </Card>
         </div>
       ))}
