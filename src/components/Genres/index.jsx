@@ -16,7 +16,6 @@ const Genres = () => {
     return data
   }, [data]);
 
-
   useEffect(() => {
     performFetch();
   }, [performFetch]);
@@ -26,7 +25,6 @@ const Genres = () => {
       {preparedData.map(item =>(
         <div key={item.id}>
           <Card title={item.name} style={{ width: '25rem', marginBottom: '2em' }}>
-                
             </Card>
         </div>
       ))}
